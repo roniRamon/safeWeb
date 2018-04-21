@@ -32,10 +32,70 @@ This problem decomposes into several areas of activity:
 - [ ] Let the user set a password to avoid kids making changes to the setting
 
 ## Technologies & Technical Challenges
-Backend: Node.js
-Frontend: express
-Database: PostgreSQL
+HTML5, CSS3, JavaScript, chrome.extension API
+
 
 ## Project Flowchart
 ## Accomplished over the Weekend
+* Study on how to build chrome extension
+
+* Plan on what functionalities should be added on
+
+* Make the png icon
+
+* Draw wireframe
+
+* Design flowchart
+
+* Finish proposal
 ## Group Members & Work Breakdown
+##### Roni Ramon and Chris Tsai
+
+#### Day 1
+* Create 404, option and pop-up pages HTML (Roni)
+* Set up file tree (Chris)
+* Complete manifest.json (TOGETHER)
+* Complete tutorials on chromePageAction and chromeBrowserAction
+
+#### Day 2
+* Design chromeStorage for extension
+* Build option.js (Roni)
+  * add functions to option page inputs
+  * SET, GET requests to chromeStorage
+* Build popup.js (Chris)
+  * add functions to pop-up page inputs
+  * set link to option page
+  * SET, GET requests to chromeStorage
+
+#### Day 3
+* Build content.js (TBD)
+  * create function to get content
+  * create logic to select unwanted contents
+  * create function using DOM manipulation to remove unwanted contents
+* Build eventPage.js (TBD)
+  * create function to get url
+  * create logic to check the url
+  * create function to redirect to 404 page if URL is blocked
+
+#### Day 4
+* Style pages
+  * create stylesheet for pop-up page (Chris)
+  * create stylesheet for option page (Roni)
+
+#### Day 5
+* Set up Timer feature
+* Create alert pop-up when the time limit is hit
+* Add set timer feature to option page
+
+#### Day 6
+* Create website to showcase the project
+  * descriptions about the extension
+  * GIF to show functionalities
+  * link to chrome extension
+  * introductions about developers
+* Create extension descriptions to publish on Chrome Web Store
+
+#### Day 7
+* Create README
+* Upload to Chrome Web Store
+* Debug
