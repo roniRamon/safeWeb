@@ -30,12 +30,12 @@ HTML5, CSS3, JavaScript, chrome.extension API
 
 ## Wireframe
 
-Option page can set a clock to limit the time on the web and set an alert when the time is over.
-Input filed allow to user to add a specific URL to a lost of blocked URL's and to add keywords to filter results from search engine.
+Option page - The user can set a clock to limit the time on the web. when the time is over an alert will popup. The timer can be reset.
+Input fields allow to user to add a specific URL to a list of blocked URL's and to add keywords to filter results from search engine.
 
 ![options page](images/safeWeb-options_v2.png)
 
-Popup page gives the user easy access to the option page, add URL's to block, add keywords to filter and view of the timer.
+Popup page allow the user easy access to the option page, add URL's to block, add keywords to filter and view of the timer. 
 
 ![popup page](images/safeWeb-popup.png)
 
