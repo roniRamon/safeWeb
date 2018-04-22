@@ -6,29 +6,20 @@ The informations kids browsing on internet might not always be appropriate. We t
 
 This problem decomposes into several areas of activity:
 * Storing the setting of URLs or keywords given by users
-
 * Access the contends on the webpages
-
 * Request the categories of webpages of links
-
 * Store the categories and links for future usage
-
 * Automatically filter the adult contents
 
 ## Functionalities and MVP
 - [ ] We will have a UI for users to customize what contents to filter
-
 - [ ] We will be able to block restricted URLs
-
 - [ ] We will be able to filter contents on a search result page
-
 - [ ] We will save the result after fetching categories of a link/website for future usage
 
 #### Bonus Features
 - [ ] Let the user to set a time limit of kids using internet
-
 - [ ] We will be able to disconnect internet access after reach time limit
-
 - [ ] Let the user set a password to avoid kids making changes to the setting
 
 ## Technologies & Technical Challenges
@@ -36,18 +27,22 @@ HTML5, CSS3, JavaScript, chrome.extension API
 
 
 ## Project Flowchart
+
+## Wireframe
+
+The option page can set a clock to limit the time on the web and set an alert when the time is over.
+Input filed allow to user to add a specific URL to a lost of blocked URL's and to add keywords to filter results from search engine. 
+
+[options page](images/safeWeb-options_v2.png)
+
 ## Accomplished over the Weekend
 * Study on how to build chrome extension
-
 * Plan on what functionalities should be added on
-
 * Make the png icon
-
 * Draw wireframe
-
 * Design flowchart
-
 * Finish proposal
+
 ## Group Members & Work Breakdown
 ##### Roni Ramon and Chris Tsai
 
