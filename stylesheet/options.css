@@ -1,0 +1,123 @@
+body {
+  background-color: rgb(78, 110, 144);
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+}
+
+.main {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.main > p {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 15px;
+  font-size: 24px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+h1 {
+  color: white;
+  font-size: 45px;;
+
+}
+
+input, button {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  background: none;
+  line-height: 1;
+}
+
+input[type="text"] {
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  width: 250px;
+  border: 1px solid #DDDDDD;
+  font-size: 18px;
+}
+
+input[type="time"] {
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100px;
+  border: 1px solid #DDDDDD;
+}
+
+input[type="submit"] {
+  background-color: #F4FAFF;
+  color: black;
+  font-weight: 400;
+  border: 1px solid #9EB3C2;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+  transition-duration: 0.2s;
+}
+
+input[type="submit"]:hover {
+  background-color: #AFBED1;
+}
+
+input[type="submit"]:active {
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+#set-timer, #disable-time {
+  font-size: 14px;
+}
+
+.timer-group, .url-group, .word-group {
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.timer-group {
+  margin-top: 100px;
+}
+
+.lists-keywords-urls {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.list-block-url, .list-block-word {
+  background-color: #DDDDDD;
+  border-radius: 5px;
+  width: 100%;
+  min-height: 300px;;
+  margin-left: 5px;
+  margin-top: 30px;
+}
+
+.list-block-url > h1, .list-block-word >h1 {
+  text-align: center;
+  font-size: 24px;
+  color: black;
+}
