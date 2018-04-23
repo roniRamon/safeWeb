@@ -16,7 +16,7 @@
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
-        margin-top: 20%
+
       }
 
       .header, p {
@@ -43,28 +43,47 @@
       }
 
       #cloud {
-        width: 580px;
+        width: 250px;
         height: 90px;
         background-color: white;
         border-radius: 100px;
         position: relative;
+        margin-top: 100px;
         box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
-        animation: cloud1 25s infinite;;
+        animation: cloud1 55s infinite;
+      }
+
+      #cloud1 {
+        width: 125px;
+        height: 45px;
+        background-color: white;
+        border-radius: 100px;
+        position: relative;
+        margin-top: 100px;
+        box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+        animation: cloud1b 45s infinite;
       }
 
       @-webkit-keyframes cloud1 {
-        0% { left: -1000px;}
-        100% { left: 180%; }
+        0% { left: -100px;}
+        100% { left: 120%; }
       }
 
-      #cloud:after, #cloud:before {
+       @-webkit-keyframes cloud1b {
+        0% { left: -50px;}
+        100% { left: 120%; }
+      }
+
+      #cloud:after, #cloud:before,
+      #cloud1:after, #cloud1:before {
         content: '';
         position: absolute;
         background-color: white;
 
       }
 
-      #cloud:after {
+      #cloud:after,
+      #cloud1:after {
         border-radius: 200px;
         width: 70px;
         height: 70px;
@@ -73,7 +92,7 @@
 
       }
 
-      #cloud:before {
+      #cloud:before{
         border-radius: 100px;
         width: 120px;
         height: 120px;
@@ -81,12 +100,24 @@
         left: 60px;
       }
 
+      #cloud1:before {
+        border-radius: 100px;
+        width: 45px;
+        height: 45px;
+        top: -30px;
+        left: 60px;
+      }
+
 
     </style>
   </head>
   <body>
+    <div id="cloud"></div>
+    <div id="cloud1"></div>
+    <div id="cloud2"></div>
+    <div id="cloud3"></div>
+    <div id="cloud4"></div>
     <section id="main">
-      <div id="cloud"></div>
       <p>
         <span class="header">Oops!</span>
         The page you were looking
