@@ -24,7 +24,20 @@ This problem decomposes into several areas of activity:
 
 ## Technologies & Technical Challenges
 HTML5, CSS3, JavaScript, chrome.extension API
+#### Storing user's preferences
+* Get inputs from option page
+  * Create form for user to fill in
+  * Create actions to handle the inputs
+* Store the preferences
+  * SET Chrome API
 
+#### Performing tasks according to user's preferences
+* Retrieve the preferences
+  * GET Chrome API
+* Create actions
+  * filter the contents of a page
+  * redirect to 404 page if URL is restricted
+* Sent actions to event page
 
 ## Project Flowchart
 ![flowchart](images/flowchart.png)
