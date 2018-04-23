@@ -27,7 +27,7 @@ HTML5, CSS3, JavaScript, chrome.extension API
 
 
 ## Project Flowchart
-![flowchart](images/Project Flowchart.png)
+![flowchart](images/flowchart.png)
 ## Wireframe
 
 Option page - The user can set a clock to limit the time on the web. when the time is over an alert will popup. The timer can be reset.
