@@ -1,15 +1,38 @@
 body {
   font-family: monospace;
-  min-height: 150px;
-  min-width: 250px;
+  height: 250px;
+  width: 300px;
   padding: 5px;
-}
-h1, .timer {
   text-align: center;
 }
 
 #url-to-block, #keyword-to-block {
+  padding: 5px;
+  border-radius: 5px;
+  font-family: monospace;
   width: 170px;
   margin-right: 7px;
   margin-bottom: 10px;
+}
+
+input[type=submit] {
+  padding: 5px;
+}
+
+#url-modal, #keyword-modal {
+  display: none;
+  position: fixed;
+  height: inherit;
+  width: inherit;
+  z-index: 1;
+  padding-top: 100px
+}
+
+#url-modal-content, #keyword-modal-content {
+  background-color: rgba(230, 230, 230, 0.9);
+  width: 40%;
+  margin: auto;
+  padding: 2px;
+  border: 1px solid #000000;
+  border-radius: 5px;
 }
