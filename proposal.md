@@ -27,7 +27,7 @@ HTML5, CSS3, JavaScript, chrome.extension API
 
 
 ## Project Flowchart
-
+![flowchart](images/Project Flowchart.png)
 ## Wireframe
 
 Option page - The user can set a clock to limit the time on the web. when the time is over an alert will popup. The timer can be reset.
@@ -35,7 +35,7 @@ Input fields allow to user to add a specific URL to a list of blocked URL's and 
 
 ![options page](images/safeWeb-options_v2.png)
 
-Popup page allow the user easy access to the option page, add URL's to block, add keywords to filter and view of the timer. 
+Popup page allow the user easy access to the option page, add URL's to block, add keywords to filter and view of the timer.
 
 ![popup page](images/safeWeb-popup.png)
 
