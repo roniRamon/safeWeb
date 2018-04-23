@@ -3,61 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>SafeWeb options</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet/options.css">
   </head>
-  <style>
-    body {
-      background-color: rgb(78, 110, 144);
-      margin: 0;
-      padding: 0;
-      font-family: monospace;
-    }
-
-    .main {
-      width: 80%;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .main > p {
-      width: 60%;
-      margin: 0 auto;
-      margin-top: 15px;
-      font-size: 24px;
-    }
-
-    .header {
-      display: flex;
-      align-items: center;
-      width: 40%;
-      margin: 0 auto;
-      margin-top: 50px;
-    }
-
-    h1 {
-      color: white;
-      font-size: 45px;;
-
-    }
-
-    input, button {
-      margin:0;
-    	border:0;
-    	padding:0;
-    	display:inline-block;
-    	vertical-align:middle;
-    	white-space:normal;
-    	background:none;
-    	line-height:1;
-    }
-
-    input[type="text"] {
-      background-color: white;
-      border-radius: 5px;
-      padding: 10px;
-      width: 250px;
-    }
-
-  </style>
   <body>
     <section class="main">
       <div class="header">
@@ -88,9 +35,15 @@
           <input type="submit" id="add-word-block" value="Block">
         </div>
 
-    <section>
+    </section>
     <section class="lists-keywords-urls">
+      <div class="list-block-url">
+        <h1>URL's To Block</h1>
 
-    <section>
+      </div>
+      <div class="list-block-word">
+        <h1>Keywords To Block</h1>
+      </div>
+    </section>
   </body>
 </html>
