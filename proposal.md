@@ -23,7 +23,14 @@ This problem decomposes into several areas of activity:
 - [ ] Let the user set a password to avoid kids making changes to the setting
 
 ## Technologies & Technical Challenges
-HTML5, CSS3, JavaScript, chrome.extension API
+###### Frontend:
+* HTML5
+* CSS3
+* JavaScript
+
+###### Date Storage:
+* Chrome Storage
+
 #### Storing user's preferences
 * Get inputs from option page
   * Create form for user to fill in
