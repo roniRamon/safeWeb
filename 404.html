@@ -43,18 +43,25 @@
       }
 
       #cloud {
-        width: 100px;
-        height: 100px;
+        width: 580px;
+        height: 90px;
         background-color: white;
         border-radius: 100px;
         position: relative;
+        box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+        animation: cloud1 25s infinite;;
+      }
+
+      @-webkit-keyframes cloud1 {
+        0% { left: -1000px;}
+        100% { left: 180%; }
       }
 
       #cloud:after, #cloud:before {
         content: '';
         position: absolute;
         background-color: white;
-        
+
       }
 
       #cloud:after {
@@ -62,17 +69,16 @@
         width: 70px;
         height: 70px;
         top: -30px;
-        left: 30px;
+        left: 10px;
 
       }
 
       #cloud:before {
-        border-radius: 200px;
+        border-radius: 100px;
         width: 120px;
         height: 120px;
-        top: 0px;
-        left: 30px;
-
+        top: -50px;
+        left: 60px;
       }
 
 
@@ -88,7 +94,7 @@
         <br/><br/>
         <small>status code: 404</small>
       </p>
-      <img src="200w4.gif"/>
+      <img src="images/200w4.gif"/>
     </section>
     <footer>
     </footer>
