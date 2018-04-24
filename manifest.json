@@ -4,6 +4,7 @@
   "description": "This extension protect kids from
   inappropriate uses of the web",
   "version": "1.0",
+  "options_page": "options.html",
   "icons": {
     "128": "images/safeWebIcon128",
     "48": "images/safeWebIcon48",
