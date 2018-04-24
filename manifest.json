@@ -5,12 +5,12 @@
   inappropriate uses of the web",
   "version": "1.0",
   "icons": {
-    "128": "images/icon/safeWebIcon128",
-    "48": "images/icon/safeWebIcon48",
-    "16": "images/icon/safeWebIcon16"
+    "128": "images/safeWebIcon128",
+    "48": "images/safeWebIcon48",
+    "16": "images/safeWebIcon16"
   },
   "browser_action": {
-    "default_icon": "images/icon/safeWebIcon16",
+    "default_icon": "images/safeWebIcon16",
     "default_popup": "popup.html"
   },
   "background": {
