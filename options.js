@@ -2,6 +2,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let timeInput = document.getElementById('set-timer');
   timeInput.onclick = () => saveTime();
+
+  let urlSubmit = document.getElementById('add-url-block');
+  urlSubmit.onclick = () => {
+    let urlInput = document.getElementById('block-url-input');
+    add('urls',urlInput.value);
+    urlInput.value = "";
+  };
+
+  let keywordSubmit = document.getElementById('add-word-block');
+  keywordSubmit.onclick = () => {
+    let keywordInput = document.getElementById('block-word-input');
+    add('keywords', keywordInput.value);
+    keywordInput.value = "";
+  };
+
 });
 
 function saveTime(){
@@ -12,15 +27,8 @@ function saveTime(){
       document.getElementById('time').innerHTML = "";
     });
   }
-
-  // chrome.storage.sync.get(["blockedUrls"], function(res) {
-    // let blockedUrlsArr = res["blockedUrls"] ? res["blockedUrls"] : [];
-    // console.log(res.blockedUrlsArr);
-    // blockedUrlsArr.push("google.com");
-    // blockedUrlsArr.push("google22.com");
-    // chrome.storage.sync.set({"blockedUrls" : blockedUrlsArr}, console.log( "array updated"));
-  // });
 }
+
 
 function add(type, content){
   chrome.storage.sync.get([type], result => {
