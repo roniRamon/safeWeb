@@ -7,7 +7,7 @@
   "icons": {
     "128": "images/icon/safeWebIcon128",
     "48": "images/icon/safeWebIcon48",
-    "16": "images/icon/safeWebIcon16",
+    "16": "images/icon/safeWebIcon16"
   },
   "browser_action": {
     "default_icon": "images/icon/safeWebIcon16",
