@@ -1,70 +1,108 @@
-body {
-  background-color: rgb(78, 110, 144);
-  margin: 0;
-  padding: 0;
-  font-family: monospace;
-}
 
-#main {
-  width: 50%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20%
-}
 
-.header, p {
-  margin: 0;
-  padding: 0;
-}
+  body {
+    background-color: rgb(78, 110, 144);
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+  }
 
-.header {
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
-  font-size: 60px;
-}
+  #main {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
 
-p {
-  color: white;
-  font-size: 34px;
-  display: flex;
-  flex-direction: column;
-}
+  }
 
-small {
-  font-size: 18px;
-}
+  .header, p {
+    margin: 0;
+    padding: 0;
+  }
 
-#cloud {
-  width: 100px;
-  height: 100px;
-  background-color: white;
-  border-radius: 100px;
-  position: relative;
-}
+  .header {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    font-size: 60px;
+  }
 
-#cloud:after, #cloud:before {
-  content: '';
-  position: absolute;
-  background-color: white;
+  p {
+    color: white;
+    font-size: 34px;
+    display: flex;
+    flex-direction: column;
+  }
 
-}
+  small {
+    font-size: 18px;
+  }
 
-#cloud:after {
-  border-radius: 200px;
-  width: 70px;
-  height: 70px;
-  top: -30px;
-  left: 30px;
+  #cloud {
+    width: 250px;
+    height: 90px;
+    background-color: white;
+    border-radius: 100px;
+    position: relative;
+    margin-top: 100px;
+    box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+    animation: cloud1 55s infinite;
+  }
 
-}
+  #cloud1 {
+    width: 125px;
+    height: 45px;
+    background-color: white;
+    border-radius: 100px;
+    position: relative;
+    margin-top: 100px;
+    box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+    animation: cloud1b 45s infinite;
+  }
 
-#cloud:before {
-  border-radius: 200px;
-  width: 120px;
-  height: 120px;
-  top: 0px;
-  left: 30px;
+  @-webkit-keyframes cloud1 {
+    0% { left: -100px;}
+    100% { left: 120%; }
+  }
 
-}
+   @-webkit-keyframes cloud1b {
+    0% { left: -50px;}
+    100% { left: 120%; }
+  }
+
+  #cloud:after, #cloud:before,
+  #cloud1:after, #cloud1:before {
+    content: '';
+    position: absolute;
+    background-color: white;
+
+  }
+
+  #cloud:after,
+  #cloud1:after {
+    border-radius: 200px;
+    width: 70px;
+    height: 70px;
+    top: -30px;
+    left: 10px;
+
+  }
+
+  #cloud:before{
+    border-radius: 100px;
+    width: 120px;
+    height: 120px;
+    top: -50px;
+    left: 60px;
+  }
+
+  #cloud1:before {
+    border-radius: 100px;
+    width: 45px;
+    height: 45px;
+    top: -30px;
+    left: 60px;
+  }
+
+
+
