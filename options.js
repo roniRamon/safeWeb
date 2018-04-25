@@ -34,7 +34,7 @@ function saveTime(){
 }
 
 
-function add(type, content){
+export function add(type, content){
   chrome.storage.sync.get([type], result => {
     let arr = result[type] ? result[type]:[];
     if (!arr.includes(content)){
