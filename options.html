@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>SafeWeb options</title>
     <link rel="stylesheet" type="text/css" href="stylesheet/options.css">
+    <script src="options.js" ></script>
   </head>
   <body>
     <section class="main">
@@ -19,18 +20,18 @@
         <div class="timer-group">
           <input type="submit" id="disable-time" value="Disable Timer"/>
 
-          <input type="time" id="time" />
+          <input type="time" id="time" value="00:00"/>
           <input type="submit" id="set-timer" value="Set Timer">
         </div>
 
         <div class="url-group">
-          <input type="text" id="block-url-input" value=""
+          <input type="text" id="block-url-input"
                  placeholder="   Enter a URL to block">
           <input type="submit" id="add-url-block" value="Block">
         </div>
 
         <div class="word-group">
-          <input type="text" id="block-word-input" value=""
+          <input type="text" id="block-word-input"
                  placeholder="   Enter a keyword to block">
           <input type="submit" id="add-word-block" value="Block">
         </div>
@@ -39,10 +40,13 @@
     <section class="lists-keywords-urls">
       <div class="list-block-url">
         <h1>URL's To Block</h1>
-
+        <ul id="ul-block-url">
+        </ul>
       </div>
       <div class="list-block-word">
         <h1>Keywords To Block</h1>
+        <ul id="ul-block-word">
+        </ul>
       </div>
     </section>
   </body>
