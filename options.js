@@ -21,7 +21,27 @@ document.addEventListener('DOMContentLoaded', () => {
     keywordInput.value = "";
   };
 
+
 });
+
+chrome.storage.onChanged.addListener( (changes, namespace) => {
+
+  let type = Object.keys(changes);
+  let newValue = (Object.values(changes)[0].newValue);
+  let oldValue = (Object.values(changes)[0].oldValue);
+
+  if(newValue.length > oldValue.length){
+    let content = newValue[newValue.length - 1];
+    addToUl(type[0], content);
+  }
+  else if (newValue.length < oldValue.length) {
+    let content = newValue.diff(oldValue);
+    let idx = newValue.indexOf(content);
+    deleteFromUl(type, idx);
+  }
+
+});
+
 
 function saveTime(){
   const time = document.getElementById('time').value;
@@ -34,7 +54,7 @@ function saveTime(){
 }
 
 
-export function add(type, content){
+function add(type, content){
   chrome.storage.sync.get([type], result => {
     let arr = result[type] ? result[type]:[];
     if (!arr.includes(content)){
