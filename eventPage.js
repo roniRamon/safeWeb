@@ -6,10 +6,10 @@ chrome.browserAction.onClicked.addListener(function() {
   });
 });
 
-chrome.tabs.onUpdate.addListener(function(tabId, changeInfo) {
-  if( createdTabs[tabId] && changeInfo.url )
-    chrome.tabs.executeScript( tabId, {file: 'content.js'} );
-});
+// chrome.tabs.onUpdate.addListener(function(tabId, changeInfo) {
+//   if( createdTabs[tabId] && changeInfo.url )
+//     chrome.tabs.executeScript( tabId, {file: 'content.js'} );
+// });
 
 chrome.tabs.onActivated.addListener(function(tabId, changeInfo) {
   if( createdTabs[tabId] && changeInfo.url )
