@@ -34,11 +34,11 @@ chrome.storage.onChanged.addListener( (changes, namespace) => {
     let content = newValue[newValue.length - 1];
     addToUl(type[0], content);
   }
-  else if (newValue.length < oldValue.length) {
-    let content = newValue.diff(oldValue);
-    let idx = newValue.indexOf(content);
-    deleteFromUl(type, idx);
-  }
+  // else if (newValue.length < oldValue.length) {
+  //   let content = newValue.diff(oldValue);
+  //   let idx = newValue.indexOf(content);
+  //   deleteFromUl(type, idx);
+  // }
 
 });
 
@@ -57,10 +57,10 @@ function saveTime(){
 function add(type, content){
   chrome.storage.sync.get([type], result => {
     let arr = result[type] ? result[type]:[];
-    if (!arr.includes(content)){
+    if ((!arr.includes(content)) || content === ''){
       arr.push(content);
-      console.log(arr);
-      chrome.storage.sync.set({[type]: arr}, addToUl(type, content));
+      // console.log(arr);
+       chrome.storage.sync.set({[type]: arr}, console.log('test'));
     } else {
       console.log(`${content} already in storage`);
     }

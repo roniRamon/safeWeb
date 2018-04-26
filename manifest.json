@@ -18,9 +18,9 @@
     "scripts": ["eventPage.js"],
     "persistent": false
   },
-  "content_scripts": [
+  "content_scripts":[
     {
-      "matches": ["http://*/*", "http://*/*" ],
+      "matches": ["https://*/*", "http://*/*" ],
       "js": ["content.js"],
       "css": ["content.css"]
     }
@@ -28,6 +28,7 @@
   "permissions": [
     "tabs",
     "storage",
-    "alarms"
+    "alarms",
+    "activeTab"
   ]
 }
