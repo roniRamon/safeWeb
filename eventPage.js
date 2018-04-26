@@ -1,6 +1,4 @@
-
-
-chrome.tabs.onActivated.addListener(function(tabId, changeInfo) {
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo) {
   let arrRes;
   chrome.tabs.query({currentWindow: true, active: true}, tab => {
     let activeTabUrl = tab[0].url;
@@ -10,11 +8,14 @@ chrome.tabs.onActivated.addListener(function(tabId, changeInfo) {
     chrome.storage.sync.get(['urls'], res => {
       arrRes = Array.from(res.urls);
       if (arrRes.includes(activeTabUrl)){
-        
+        chrome.tabs.update(tabId.tabId, {url: chrome.runtime.getURL("404.html") });
       }
     });
   });
 
+});
+
+chrome.tabs.onActivated.addListener(function(tabId, changeInfo) {
     chrome.tabs.executeScript( tabId.tabId, {file: 'content.js'} );
 });
 
