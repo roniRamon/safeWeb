@@ -17,7 +17,14 @@ let keywords = [
   'masturbat',
   'porn'
 ];
-chrome.storage.sync.set({"keywords": keywords},() => {});
+chrome.storage.sync.get(["keywords"], result => {
+  if (result["keywords"] === undefined) {
+    chrome.storage.sync.set({"keywords": defaultKeywords},() => {});
+    console.log(keywords)
+  }
+  //used to reset storage
+  // chrome.storage.sync.set({"keywords": []},() => {});
+});
 document.addEventListener('DOMContentLoaded', () => {
 
   displayInList('urls');
