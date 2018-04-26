@@ -29,6 +29,8 @@
     "tabs",
     "storage",
     "alarms",
-    "activeTab"
+    "activeTab",
+    "http://*/",
+    "https://*/"
   ]
 }
