@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
   displayInList('keywords');
 
 
-  let timeInput = document.getElementById('set-timer');
-  timeInput.onclick = () => saveTime();
+  // let timeInput = document.getElementById('set-timer');
+  // timeInput.onclick = () => saveTime();
 
   let urlSubmit = document.getElementById('add-url-block');
   urlSubmit.onclick = () => {
@@ -48,6 +48,21 @@ document.addEventListener('DOMContentLoaded', () => {
     keywordInput.value = "";
   };
 
+  let timeSubmit = document.getElementById('add-time');
+  timeSubmit.onclick = () => {
+    let timeStart = document.getElementById("time-start").value;
+    let timeEnd = document.getElementById("time-end").value;
+    if (timeStart && timeEnd) {
+      chrome.storage.sync.set({"time": [timeStart, timeEnd]});
+    };
+    alert("time saved");
+  };
+
+  chrome.storage.sync.get(["time"], res => {
+    document.getElementById("time-start").value = res["time"][0];
+    document.getElementById("time-end").value = res["time"][1];
+  });
+
 
 });
 
@@ -57,7 +72,7 @@ chrome.storage.onChanged.addListener( (changes, namespace) => {
   let newValue = (Object.values(changes)[0].newValue);
   let oldValue = (Object.values(changes)[0].oldValue);
 
-  if(newValue.length > oldValue.length){
+  if(type !== 'time' && newValue.length > oldValue.length){
     let content = newValue[newValue.length - 1];
     addToUl(type[0], content);
   }
@@ -68,7 +83,6 @@ chrome.storage.onChanged.addListener( (changes, namespace) => {
   // }
 
 });
-
 
 function saveTime(){
   const time = document.getElementById('time').value;
