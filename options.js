@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
   displayInList('keywords');
 
 
-  let timeInput = document.getElementById('set-timer');
-  timeInput.onclick = () => saveTime();
+  // let timeInput = document.getElementById('set-timer');
+  // timeInput.onclick = () => saveTime();
 
   let urlSubmit = document.getElementById('add-url-block');
   urlSubmit.onclick = () => {
