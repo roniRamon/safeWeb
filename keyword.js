@@ -1,0 +1,19 @@
+let keywords = [
+  'bitch',
+  'blowjob',
+  'cock',
+  'cum',
+  'dick',
+  'fuck',
+  'nigger;',
+  'peenus',
+  'peinus',
+  'pusse',
+  'pussy',
+  'sex',
+  'slut',
+  'vagina',
+  'whore',
+  'masturbat',
+  'porn'
+];
