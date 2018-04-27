@@ -15,16 +15,25 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo) {
 
   chrome.tabs.executeScript( tabId.tabId, {file: 'content.js'} );
 });
-// chrome.storage.sync.get(['time'], res => {
-//   let startHour = res['time'][0];
-//   let endHour = res['time'][1];
-//   let currentTime = new Date();
-//   let timeStr = `${currentTime.getHours()}${currentTime.getMilliseconds()}`;
-//   console.log(timeStr);
-//   if (timeStr < (startHour + '00') || timeStr > (startHour + '00')){
-//     window.location = chrome.runtime.getURL("404.html");
-//   }
-// });
+
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
+  if (request.todo === 'checkTime') {
+    console.log('huad');
+    chrome.tabs.query({currentWindow: true, active: true}, tab => {
+      chrome.storage.sync.get(['time'], res => {
+        let startHour = res['time'][0];
+        let endHour = res['time'][1];
+        let currentTime = new Date();
+        let timeStr = `${currentTime.getHours()}${currentTime.getMinutes()}`;
+        console.log(timeStr);
+        if (timeStr < (startHour + '00') || timeStr > (startHour + '00')){
+          // document.write("<h1>Time expired</h1>")
+          console.log('guigghbbtf');
+        }
+      });
+    })
+  }
+});
 
 // chrome.tabs.onActivated.addListener(function(tabId, changeInfo) {
 //   chrome.tabs.executeScript( tabId.tabId, {file: 'content.js'} );

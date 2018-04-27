@@ -10,3 +10,5 @@ chrome.storage.sync.get(['keywords'], res => {
     });
   });
 });
+
+chrome.runtime.sendMessage({todo: "checkTime"});
