@@ -5,7 +5,7 @@ body {
   background-color: rgb(78, 110, 144);
   margin: 0;
   padding: 0;
-  font-family: 'PT Sans Narrow', sans-serif;;
+  font-family: 'PT Sans Narrow', sans-serif;
 }
 
 .main {
@@ -195,7 +195,7 @@ li:active {
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .main {
     flex-direction: column;
   }

@@ -6,6 +6,10 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo) {
     activeTabUrl = `${activeTabUrl[0]}//${activeTabUrl[2]}`;
     //get all blocked url from chrome storge
     chrome.storage.sync.get(['urls', 'time'], res => {
+      arrRes = Array.from(res.urls);
+      if (arrRes.join('').includes(activeTabUrl)){
+        chrome.tabs.update(tabId.tabId, {url: chrome.runtime.getURL("404.html") });
+      }
       let startHour = res['time'][0];
       let endHour = res['time'][1];
       let currentTime = new Date();
@@ -14,10 +18,6 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo) {
         document.location = chrome.runtime.getURL('404.html');
       }
 
-      arrRes = Array.from(res.urls);
-      if (arrRes.join('').includes(activeTabUrl)){
-        chrome.tabs.update(tabId.tabId, {url: chrome.runtime.getURL("404.html") });
-      }
     });
   });
 
