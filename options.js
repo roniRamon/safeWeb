@@ -54,9 +54,17 @@ document.addEventListener('DOMContentLoaded', () => {
     alert("time saved");
   };
 
+  let timeReset = document.getElementById('reset-time');
+  timeReset.onclick = () => {
+    chrome.storage.sync.set({"time": []});
+    alert("time reset");
+  };
+
   chrome.storage.sync.get(["time"], res => {
-    document.getElementById("time-start").value = res["time"][0];
-    document.getElementById("time-end").value = res["time"][1];
+    if (res["time"]) {
+      document.getElementById("time-start").value = res["time"][0];
+      document.getElementById("time-end").value = res["time"][1];
+    }
   });
 
 
