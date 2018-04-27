@@ -193,3 +193,14 @@ li:active {
 #remove-a:hover {
   color: #DDDDDD;
 }
+
+
+@media (max-width: 600px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .lists-keywords-urls {
+    flex-direction: column;
+  }
+}

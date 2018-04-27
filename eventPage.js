@@ -8,6 +8,12 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo) {
     chrome.storage.sync.get(['urls', 'time'], res => {
       let startHour = res['time'][0];
       let endHour = res['time'][1];
+      let currentTime = new Date();
+      let timeStr = `${currentTime.getHours()}${currentTime.getMilliseconds()}`;
+      if (timeStr < (startHour + '00') || timeStr > (startHour + '00')){
+        document.location = chrome.runtime.getURL('404.html');
+      }
+
       arrRes = Array.from(res.urls);
       if (arrRes.join('').includes(activeTabUrl)){
         chrome.tabs.update(tabId.tabId, {url: chrome.runtime.getURL("404.html") });
