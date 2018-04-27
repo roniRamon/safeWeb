@@ -57,6 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let timeReset = document.getElementById('reset-time');
   timeReset.onclick = () => {
     chrome.storage.sync.set({"time": []});
+    document.getElementById("time-start").value = "";
+    document.getElementById("time-end").value = "";
     alert("time reset");
   };
 
@@ -76,7 +78,7 @@ chrome.storage.onChanged.addListener( (changes, namespace) => {
   let newValue = (Object.values(changes)[0].newValue);
   let oldValue = (Object.values(changes)[0].oldValue);
 
-  if(type !== 'time' && newValue.length > oldValue.length){
+  if(newValue && oldValue && type !== 'time' && newValue.length > oldValue.length){
     let content = newValue[newValue.length - 1];
     addToUl(type[0], content);
   }
