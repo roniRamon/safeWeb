@@ -10,7 +10,7 @@ let defaultKeywords = [
   'pussy',
   'cock',
   'cum',
-  'nigger',
+  'nigger;',
   'peenus',
   'vagina',
   'blowjob',
@@ -57,20 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
     alert("time saved");
   };
 
-  let timeReset = document.getElementById('reset-time');
-  timeReset.onclick = () => {
-    chrome.storage.sync.set({"time": []});
-    document.getElementById("time-start").value = "";
-    document.getElementById("time-end").value = "";
-    alert("time reset");
-  };
-
   chrome.storage.sync.get(["time"], res => {
-    if (res['time']) {
-      document.getElementById("time-start").value = res["time"][0];
-      document.getElementById("time-end").value = res["time"][1];
-    }
+    document.getElementById("time-start").value = res["time"][0];
+    document.getElementById("time-end").value = res["time"][1];
   });
+
+
 });
 
 chrome.storage.onChanged.addListener( (changes, namespace) => {
@@ -133,13 +125,10 @@ function displayInList(type) {
       if (type === 'urls'){
         let ulBlock = document.getElementById('ul-block-url');
         let li;
-        if (result[type]) {
-          result[type].forEach( url => {
-            li = document.createElement('li');
-            li.innerHTML = url;
-            ulBlock.appendChild(li);
-          });
-        }
+        result[type].forEach( url => {
+          li = document.createElement('li');
+          li.innerHTML = url;
+
           let removeBt = document.createElement('a');
           removeBt.setAttribute('id', 'remove-a');
           removeBt.onclick = () => remove('urls', url);
@@ -152,15 +141,10 @@ function displayInList(type) {
       else if (type === 'keywords') {
         let ulBlock = document.getElementById('ul-block-word');
         let li;
-        if (result[type]) {
-          result[type].forEach( word => {
-            li = document.createElement('li');
-            li.innerHTML = word;
-            ulBlock.appendChild(li);
-          });
-        } else {
-          displayInList(type)
-        }
+        result[type].forEach( word => {
+          li = document.createElement('li');
+          li.innerHTML = word;
+
           let removeBt = document.createElement('a');
           removeBt.setAttribute('id', 'remove-a');
           removeBt.onclick = () => remove('keywords', word);
