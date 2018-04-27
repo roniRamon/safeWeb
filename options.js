@@ -33,22 +33,31 @@ document.addEventListener('DOMContentLoaded', () => {
   let urlSubmit = document.getElementById('add-url-block');
   urlSubmit.onclick = () => {
     let urlInput = document.getElementById('block-url-input');
-    add('urls',urlInput.value);
-    urlInput.value = "";
+    if (urlInput.value.length === 0) {
+      alert("url can't be empty")
+    } else {
+      add('urls',urlInput.value);
+      urlInput.value = "";
+    }
   };
 
   let keywordSubmit = document.getElementById('add-word-block');
   keywordSubmit.onclick = () => {
     let keywordInput = document.getElementById('block-word-input');
-    add('keywords', keywordInput.value);
-    keywordInput.value = "";
+    console.log(keywordInput);
+    if (keywordInput.value.length === 0) {
+      alert("keyword can't be empty")
+    } else {
+      add('keywords', keywordInput.value);
+      keywordInput.value = "";
+    }
   };
 
   let timeSubmit = document.getElementById('add-time');
   timeSubmit.onclick = () => {
     let timeStart = document.getElementById("time-start").value;
     let timeEnd = document.getElementById("time-end").value;
-    if (timeStart === '' || timeEnd === '') {
+    if (timeStart === '' || timeEnd === '' || timeStart === 'default' || timeEnd === 'default') {
       alert('select a valid start/end time')
     } else if (timeStart && timeEnd) {
       chrome.storage.sync.set({"time": [timeStart, timeEnd]});
