@@ -15,16 +15,35 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo) {
 
   chrome.tabs.executeScript( tabId.tabId, {file: 'content.js'} );
 });
-// chrome.storage.sync.get(['time'], res => {
-//   let startHour = res['time'][0];
-//   let endHour = res['time'][1];
-//   let currentTime = new Date();
-//   let timeStr = `${currentTime.getHours()}${currentTime.getMilliseconds()}`;
-//   console.log(timeStr);
-//   if (timeStr < (startHour + '00') || timeStr > (startHour + '00')){
-//     window.location = chrome.runtime.getURL("404.html");
-//   }
-// });
+
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
+  if (request.todo === 'checkTime') {
+    chrome.tabs.query({currentWindow: true, active: true}, tab => {
+      chrome.storage.sync.get(['time'], res => {
+        if (res['time'].length !== 0) {
+          let startHour = res['time'][0];
+          let endHour = res['time'][1];
+          let currentTime = new Date();
+          let timeStr = "";
+          if (currentTime.getHours() < 10 && currentTime.getMinutes() < 10) {
+            timeStr = `0${currentTime.getHours()}0${currentTime.getMinutes()}`
+          } else if (currentTime.getHours() < 10) {
+            timeStr =  `0${currentTime.getHours()}${currentTime.getMinutes()}`
+          } else if (currentTime.getMinutes() < 10) {
+            timeStr = `${currentTime.getHours()}0${currentTime.getMinutes()}`
+          } else {
+            timeStr = `${currentTime.getHours()}${currentTime.getMinutes()}`;
+          }
+          if (timeStr < (startHour + '00') || timeStr > (endHour + '00')){
+            chrome.tabs.query({currentWindow: true, active: true}, tab => {
+              chrome.tabs.update(tab[0].id, {url: chrome.runtime.getURL("404.html") });
+            });
+          }
+        }
+      });
+    })
+  }
+});
 
 // chrome.tabs.onActivated.addListener(function(tabId, changeInfo) {
 //   chrome.tabs.executeScript( tabId.tabId, {file: 'content.js'} );

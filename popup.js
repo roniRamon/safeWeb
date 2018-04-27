@@ -28,4 +28,24 @@ document.addEventListener('DOMContentLoaded', () =>{
     //alert(`keyword saved! ${keywordInput}`);
     keywordInput.value = "";
   };
+
+  let optionLink = document.getElementById('link-to-option');
+  optionLink.onclick = () => {
+    chrome.tabs.create({'url': "/options.html" } )
+  }
+
+  let timeSpan = document.getElementById('time-span');
+  chrome.storage.sync.get(['time'], res => {
+    if (res['time'].length > 0) {
+      timeSpan.innerHTML = `${res['time'][0]}:00 - ${res['time'][1]}:00`
+    } else {
+      timeSpan.innerHTML = 'Unlimited'
+    }
+  });
+
+  let resetButton = document.getElementById('reset-time');
+  resetButton.onclick = () => {
+    chrome.storage.sync.set({"time": []});
+    timeSpan.innerHTML = 'Unlimited'
+  }
 });

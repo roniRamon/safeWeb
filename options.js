@@ -48,22 +48,27 @@ document.addEventListener('DOMContentLoaded', () => {
   timeSubmit.onclick = () => {
     let timeStart = document.getElementById("time-start").value;
     let timeEnd = document.getElementById("time-end").value;
-    if (timeStart && timeEnd) {
+    if (timeStart === '' || timeEnd === '') {
+      alert('select a valid start/end time')
+    } else if (timeStart && timeEnd) {
       chrome.storage.sync.set({"time": [timeStart, timeEnd]});
+      alert("time saved");
     }
-    alert("time saved");
   };
 
   let timeReset = document.getElementById('reset-time');
   timeReset.onclick = () => {
     chrome.storage.sync.set({"time": []});
-    document.getElementById("time-start").value = "";
-    document.getElementById("time-end").value = "";
+    document.getElementById("time-start").value = 'default';
+    document.getElementById("time-end").value ='default';
     alert("time reset");
   };
 
   chrome.storage.sync.get(["time"], res => {
-    if (res["time"]) {
+    if (res['time'].length === 0) {
+      document.getElementById("time-start").value = 'default';
+      document.getElementById("time-end").value ='default';
+    } else {
       document.getElementById("time-start").value = res["time"][0];
       document.getElementById("time-end").value = res["time"][1];
     }
