@@ -1,21 +1,21 @@
 let defaultKeywords = [
+  'porn',
   'bitch',
-  'blowjob',
-  'cock',
-  'cum',
-  'dick',
+  'sex',
   'fuck',
-  'nigger',
-  'peenus',
+  'dick',
+  'slut',
   'peinus',
   'pusse',
   'pussy',
-  'sex',
-  'slut',
+  'cock',
+  'cum',
+  'nigger',
+  'peenus',
   'vagina',
+  'blowjob',
   'whore',
-  'masturbat',
-  'porn'
+  'masturbat'
 ];
 chrome.storage.sync.get(["keywords"], result => {
   if (result["keywords"] === undefined) {
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let timeEnd = document.getElementById("time-end").value;
     if (timeStart && timeEnd) {
       chrome.storage.sync.set({"time": [timeStart, timeEnd]});
-    };
+    }
     alert("time saved");
   };
 
@@ -140,6 +140,14 @@ function displayInList(type) {
             ulBlock.appendChild(li);
           });
         }
+          let removeBt = document.createElement('a');
+          removeBt.setAttribute('id', 'remove-a');
+          removeBt.onclick = () => remove('urls', url);
+          removeBt.innerHTML = 'X';
+          li.appendChild(removeBt);
+
+          ulBlock.appendChild(li);
+        });
       }
       else if (type === 'keywords') {
         let ulBlock = document.getElementById('ul-block-word');
@@ -153,6 +161,14 @@ function displayInList(type) {
         } else {
           displayInList(type)
         }
+          let removeBt = document.createElement('a');
+          removeBt.setAttribute('id', 'remove-a');
+          removeBt.onclick = () => remove('keywords', word);
+          removeBt.innerHTML = 'X';
+          li.appendChild(removeBt);
+
+          ulBlock.appendChild(li);
+        });
       }
     });
 }
@@ -162,6 +178,13 @@ function addToUl(type, content) {
   let li = document.createElement('li');
 
   li.innerHTML = content;
+
+  let removeBt = document.createElement('a');
+  removeBt.setAttribute('id', 'remove-a');
+  removeBt.onclick = () => remove(type, content);
+
+  removeBt.innerHTML = 'X';
+  li.appendChild(removeBt);
   ul.appendChild(li);
 
 }

@@ -13,8 +13,9 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo) {
       if (timeStr < (startHour + '00') || timeStr > (endHour + '00')) {
         document.location = chrome.runtime.getURL('404.html');
       }
+
       arrRes = Array.from(res.urls);
-      if (arrRes.includes(activeTabUrl)){
+      if (arrRes.join('').includes(activeTabUrl)){
         chrome.tabs.update(tabId.tabId, {url: chrome.runtime.getURL("404.html") });
       }
     });
@@ -24,6 +25,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo) {
 });
 
 // chrome.tabs.onActivated.addListener(function(tabId, changeInfo) {
+//   chrome.tabs.executeScript( tabId.tabId, {file: 'content.js'} );
 // });
 //
 //

@@ -8,16 +8,17 @@
     <script src="options.js" ></script>
   </head>
   <body>
+    <div class="header">
+      <img src="images/safeWebIcon128.png"
+      width="60" height="60"
+      alt="icon safe web"/>
+      <h1>SafeWeb Settings</h1>
+    </div>
     <section class="main">
-      <div class="header">
-        <img src="images/safeWebIcon128.png"
-             width="100" height="100"
-             alt="icon safe web"/>
-        <h1>SafeWeb Settings</h1>
-      </div>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       </p>
+
       <label>Start Time
         <select id="time-start">
           <option defaultValue="">--Select Start Time--</option>
@@ -84,10 +85,12 @@
         <input type="submit" id="add-url-block" value="Block">
       </div>
 
-      <div class="word-group">
-        <input type="text" id="block-word-input"
-               placeholder="   Enter a keyword to block">
-        <input type="submit" id="add-word-block" value="Block">
+
+        <div class="word-group">
+          <input type="text" id="block-word-input"
+                 placeholder="   Enter a keyword to block">
+          <input type="submit" id="add-word-block" value="Block">
+        </div>
       </div>
     </section>
     <section class="lists-keywords-urls">
