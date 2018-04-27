@@ -28,4 +28,14 @@ document.addEventListener('DOMContentLoaded', () =>{
     //alert(`keyword saved! ${keywordInput}`);
     keywordInput.value = "";
   };
+
+  let optionLink = document.getElementById('link-to-option');
+  optionLink.onclick = () => {
+    chrome.tabs.create({'url': "/options.html" } )
+  }
+
+  let timeSpan = document.getElementById('time-span');
+  chrome.storage.sync.get(['time'], res => {
+    timeSpan.innerHTML = `${res['time'][0]}:00 - ${res['time'][1]}:00`
+  });
 });
