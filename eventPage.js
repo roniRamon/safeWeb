@@ -1,7 +1,7 @@
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo) {
   let arrRes;
   chrome.tabs.query({currentWindow: true, active: true}, tab => {
-
+    console.log(tab[0].url);
     let activeTabUrl = tab[0].url;
     activeTabUrl = activeTabUrl.split('/');
     activeTabUrl = `${activeTabUrl[0]}//${activeTabUrl[2]}`;
@@ -19,8 +19,9 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo) {
   chrome.tabs.executeScript( tabId.tabId, {file: 'content.js'} );
 });
 
-// chrome.tabs.onActivated.addListener(function(tabId, changeInfo) {
-// });
+chrome.tabs.onActivated.addListener(function(tabId, changeInfo) {
+  chrome.tabs.executeScript( tabId.tabId, {file: 'content.js'} );
+});
 //
 //
 // chrome.tabs.onCreated.addListener(function(tabId, changeInfo) {

@@ -1,8 +1,9 @@
-let arrRes = [];
+let arrRes2 = [];
+console.log('test');
 chrome.storage.sync.get(['keywords'], res => {
-  arrRes.push(Array.from(res.keywords));
+  arrRes2.push(Array.from(res.keywords));
   document.querySelectorAll('p,span,a').forEach(el => {
-    arrRes.forEach( word => {
+    arrRes2.forEach( word => {
       if(el.innerHTML.toLowerCase().includes(word)){
 
         el.parentNode.remove();
