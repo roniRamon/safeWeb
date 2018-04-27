@@ -12,3 +12,10 @@ chrome.storage.sync.get(['keywords'], res => {
 });
 
 chrome.runtime.sendMessage({todo: "checkTime"});
+// 
+// chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
+//   console.log('in content');
+//   if (request.todo === 'time-invalid') {
+//     document.write("<h1>wrong</h1>")
+//   }
+// });
