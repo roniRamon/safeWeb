@@ -36,6 +36,16 @@ document.addEventListener('DOMContentLoaded', () =>{
 
   let timeSpan = document.getElementById('time-span');
   chrome.storage.sync.get(['time'], res => {
-    timeSpan.innerHTML = `${res['time'][0]}:00 - ${res['time'][1]}:00`
+    if (res['time'].length > 0) {
+      timeSpan.innerHTML = `${res['time'][0]}:00 - ${res['time'][1]}:00`
+    } else {
+      timeSpan.innerHTML = 'Unlimited'
+    }
   });
+
+  let resetButton = document.getElementById('reset-time');
+  resetButton.onclick = () => {
+    chrome.storage.sync.set({"time": []});
+    timeSpan.innerHTML = 'Unlimited'
+  }
 });
