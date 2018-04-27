@@ -1,11 +1,11 @@
-let keywords = [
+let defaultKeywords = [
   'bitch',
   'blowjob',
   'cock',
   'cum',
   'dick',
   'fuck',
-  'nigger;',
+  'nigger',
   'peenus',
   'peinus',
   'pusse',
@@ -20,7 +20,6 @@ let keywords = [
 chrome.storage.sync.get(["keywords"], result => {
   if (result["keywords"] === undefined) {
     chrome.storage.sync.set({"keywords": defaultKeywords},() => {});
-    console.log(keywords)
   }
   //used to reset storage
   // chrome.storage.sync.set({"keywords": []},() => {});
@@ -58,12 +57,20 @@ document.addEventListener('DOMContentLoaded', () => {
     alert("time saved");
   };
 
+  let timeReset = document.getElementById('reset-time');
+  timeReset.onclick = () => {
+    chrome.storage.sync.set({"time": []});
+    document.getElementById("time-start").value = "";
+    document.getElementById("time-end").value = "";
+    alert("time reset");
+  };
+
   chrome.storage.sync.get(["time"], res => {
-    document.getElementById("time-start").value = res["time"][0];
-    document.getElementById("time-end").value = res["time"][1];
+    if (res['time']) {
+      document.getElementById("time-start").value = res["time"][0];
+      document.getElementById("time-end").value = res["time"][1];
+    }
   });
-
-
 });
 
 chrome.storage.onChanged.addListener( (changes, namespace) => {
@@ -126,20 +133,26 @@ function displayInList(type) {
       if (type === 'urls'){
         let ulBlock = document.getElementById('ul-block-url');
         let li;
-        result[type].forEach( url => {
-          li = document.createElement('li');
-          li.innerHTML = url;
-          ulBlock.appendChild(li);
-        });
+        if (result[type]) {
+          result[type].forEach( url => {
+            li = document.createElement('li');
+            li.innerHTML = url;
+            ulBlock.appendChild(li);
+          });
+        }
       }
       else if (type === 'keywords') {
         let ulBlock = document.getElementById('ul-block-word');
         let li;
-        result[type].forEach( word => {
-          li = document.createElement('li');
-          li.innerHTML = word;
-          ulBlock.appendChild(li);
-        });
+        if (result[type]) {
+          result[type].forEach( word => {
+            li = document.createElement('li');
+            li.innerHTML = word;
+            ulBlock.appendChild(li);
+          });
+        } else {
+          displayInList(type)
+        }
       }
     });
 }
