@@ -5,7 +5,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo) {
     activeTabUrl = activeTabUrl.split('/');
     activeTabUrl = `${activeTabUrl[0]}//${activeTabUrl[2]}`;
     //get all blocked url from chrome storge
-    chrome.storage.sync.get(['time'], res => {
+    chrome.storage.sync.get(['url'], res => {
       arrRes = Array.from(res.urls);
       if (arrRes.join('').includes(activeTabUrl)){
         chrome.tabs.update(tabId.tabId, {url: chrome.runtime.getURL("404.html") });
