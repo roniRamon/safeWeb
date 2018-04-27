@@ -3,14 +3,11 @@ let defaultKeywords = [
   'bitch',
   'sex',
   'fuck',
-  'dick',
   'slut',
-  'peinus',
   'pusse',
-  'pussy',
   'cock',
   'cum',
-  'nigger;',
+  'nigger',
   'peenus',
   'vagina',
   'blowjob',
@@ -125,34 +122,42 @@ function displayInList(type) {
       if (type === 'urls'){
         let ulBlock = document.getElementById('ul-block-url');
         let li;
-        result[type].forEach( url => {
-          li = document.createElement('li');
-          li.innerHTML = url;
 
-          let removeBt = document.createElement('a');
-          removeBt.setAttribute('id', 'remove-a');
-          removeBt.onclick = () => remove('urls', url);
-          removeBt.innerHTML = 'X';
-          li.appendChild(removeBt);
+        if (result[type]){
+          result[type].forEach( url => {
+            li = document.createElement('li');
+            li.innerHTML = url;
 
-          ulBlock.appendChild(li);
-        });
+            let removeBt = document.createElement('a');
+            removeBt.setAttribute('id', 'remove-a');
+            removeBt.onclick = () => remove('urls', url);
+            removeBt.innerHTML = 'X';
+            li.appendChild(removeBt);
+
+            ulBlock.appendChild(li);
+          });
+        }
       }
       else if (type === 'keywords') {
         let ulBlock = document.getElementById('ul-block-word');
         let li;
-        result[type].forEach( word => {
-          li = document.createElement('li');
-          li.innerHTML = word;
+        if (result[type]){
+          result[type].forEach( word => {
+            li = document.createElement('li');
+            li.innerHTML = word;
 
-          let removeBt = document.createElement('a');
-          removeBt.setAttribute('id', 'remove-a');
-          removeBt.onclick = () => remove('keywords', word);
-          removeBt.innerHTML = 'X';
-          li.appendChild(removeBt);
+            let removeBt = document.createElement('a');
+            removeBt.setAttribute('id', 'remove-a');
+            removeBt.onclick = () => remove('keywords', word);
+            removeBt.innerHTML = 'X';
+            li.appendChild(removeBt);
 
-          ulBlock.appendChild(li);
-        });
+            ulBlock.appendChild(li);
+          });
+        }
+        else {
+          displayInList(type);
+        }
       }
     });
 }
