@@ -176,12 +176,16 @@ li:active {
 }
 
 #time-start {
-  margin-right: 93px;
   margin-bottom: 10px;
 }
 
 #add-time, #time-end {
   margin-bottom: 11px
+}
+
+#add-time {
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 #remove-a {
