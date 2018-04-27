@@ -1,26 +1,25 @@
-let keywords = [
+let defaultKeywords = [
+  'porn',
   'bitch',
-  'blowjob',
-  'cock',
-  'cum',
-  'dick',
+  'sex',
   'fuck',
-  'nigger;',
-  'peenus',
+  'dick',
+  'slut',
   'peinus',
   'pusse',
   'pussy',
-  'sex',
-  'slut',
+  'cock',
+  'cum',
+  'nigger;',
+  'peenus',
   'vagina',
+  'blowjob',
   'whore',
-  'masturbat',
-  'porn'
+  'masturbat'
 ];
 chrome.storage.sync.get(["keywords"], result => {
   if (result["keywords"] === undefined) {
     chrome.storage.sync.set({"keywords": defaultKeywords},() => {});
-    console.log(keywords)
   }
   //used to reset storage
   // chrome.storage.sync.set({"keywords": []},() => {});
