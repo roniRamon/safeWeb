@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let timeEnd = document.getElementById("time-end").value;
     if (timeStart && timeEnd) {
       chrome.storage.sync.set({"time": [timeStart, timeEnd]});
-    };
+    }
     alert("time saved");
   };
 
