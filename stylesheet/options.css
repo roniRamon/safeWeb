@@ -22,6 +22,7 @@ body {
   margin: 0 auto;
   margin-top: 15px;
   font-size: 24px;
+  color: white;
 }
 
 .header {
@@ -151,7 +152,8 @@ li {
   border: 0.5px solid #1B263B;
   margin-right: 40px;
   box-sizing: border-box;
-
+padding-bottom: 5px;
+padding-top: 5px;
 }
 
 li:hover {
@@ -180,4 +182,14 @@ li:active {
 
 #add-time, #time-end {
   margin-bottom: 11px
+}
+
+#remove-a {
+  float: right;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+#remove-a:hover {
+  color: #DDDDDD;
 }

@@ -128,6 +128,13 @@ function displayInList(type) {
         result[type].forEach( url => {
           li = document.createElement('li');
           li.innerHTML = url;
+
+          let removeBt = document.createElement('a');
+          removeBt.setAttribute('id', 'remove-a');
+          removeBt.onclick = () => remove('urls', url);
+          removeBt.innerHTML = 'X';
+          li.appendChild(removeBt);
+
           ulBlock.appendChild(li);
         });
       }
@@ -137,6 +144,13 @@ function displayInList(type) {
         result[type].forEach( word => {
           li = document.createElement('li');
           li.innerHTML = word;
+
+          let removeBt = document.createElement('a');
+          removeBt.setAttribute('id', 'remove-a');
+          removeBt.onclick = () => remove('keywords', word);
+          removeBt.innerHTML = 'X';
+          li.appendChild(removeBt);
+
           ulBlock.appendChild(li);
         });
       }
@@ -148,6 +162,13 @@ function addToUl(type, content) {
   let li = document.createElement('li');
 
   li.innerHTML = content;
+
+  let removeBt = document.createElement('a');
+  removeBt.setAttribute('id', 'remove-a');
+  removeBt.onclick = () => remove(type, content);
+
+  removeBt.innerHTML = 'X';
+  li.appendChild(removeBt);
   ul.appendChild(li);
 
 }
