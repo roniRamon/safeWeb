@@ -12,6 +12,9 @@ body {
   width: 80%;
   margin: 0 auto;
   text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .main > p {
@@ -23,19 +26,16 @@ body {
 
 .header {
   display: flex;
-  align-items: center;
-  width: 40%;
-  margin: 0 auto;
-  margin-top: 50px;
+  background: #415A77;
 }
 
 h1 {
   color: white;
-  font-size: 45px;
-  font-weight: bold;
+    font-size: 25px;
+    font-weight: bold;
 }
 
-input, button {
+input, button, select {
   margin: 0;
   border: 0;
   padding: 0;
@@ -46,7 +46,12 @@ input, button {
   line-height: 1;
 }
 
-input[type="text"] {
+label {
+  color: white;
+  font-size: 24px;
+}
+
+input[type="text"], select {
   background-color: white;
   border-radius: 5px;
   padding: 10px;
@@ -111,18 +116,21 @@ input[type="submit"]:active {
 }
 
 .list-block-url, .list-block-word {
-  background-color: #DDDDDD;
+  background-color: #1B263B;
   border-radius: 5px;
   width: 100%;
   min-height: 300px;;
-  margin-left: 5px;
+  margin-left: 25px;
   margin-top: 30px;
+  overflow: scroll;
+  height: 350px;
+  margin-bottom: 40px;
 }
 
 .list-block-url > h1, .list-block-word >h1 {
   text-align: center;
   font-size: 24px;
-  color: black;
+  color: white;
 }
 
 
@@ -132,6 +140,7 @@ ul {
   flex-direction: column;
   align-items: flex-end;
   width: 100%;
+
 }
 
 li {
@@ -139,17 +148,36 @@ li {
   width: 100%;
   font-size: 24px;
   padding-left: 40px;
-  border: 0.5px solid #D3D3D3;
+  border: 0.5px solid #1B263B;
   margin-right: 40px;
   box-sizing: border-box;
+
 }
 
 li:hover {
-  background-color:  #D3D3D3;
-  -webkit-transition: all 2s;
+  background-color:  #415A77;
+  box-shadow: 10px 5px 5px rgba(0,0,0,0.4);
+  transform: scale(1.03);
+  border-radius: 15px;
+  color: white;
+  /* -webkit-transition: all 2s; */
 }
 
 li:active {
-  background-color:  #D3D3D3;
+  background-color:  #415A77;
+  box-shadow: 3px 3px #808080;
   -webkit-transition: all 2s;
+}
+
+#form-container {
+  margin-top: 40px;
+}
+
+#time-start {
+  margin-right: 93px;
+  margin-bottom: 10px;
+}
+
+#add-time, #time-end {
+  margin-bottom: 11px
 }
