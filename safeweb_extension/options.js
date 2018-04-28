@@ -187,7 +187,16 @@ function displayInList(type) {
 }
 
 function addToUl(type, content) {
-  let ul = type === 'urls'? document.getElementById('ul-block-url') : document.getElementById('ul-block-word');
+  let ul;
+  if(type === 'urls') {
+    ul = document.getElementById('ul-block-url');
+  }
+  else if (type === 'keywords') {
+    ul = document.getElementById('ul-block-word');
+  }
+  else {
+    return;
+  }
   let li = document.createElement('li');
 
   li.innerHTML = content;
