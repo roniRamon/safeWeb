@@ -51,3 +51,6 @@ The first thing we begin with this project is to build a blueprint while decidin
 ## Technologies
 
 ## Future Directions
+* Require password to make any changes to the setting
+* Create a 'parent mode' to turn off all the filtering
+* Use smart filter while filtering the contents of a page (e.g. parents set "breast" as inappropriate word, but the extension will not be filter if appear as "breast feeding" or "chicken breast")
