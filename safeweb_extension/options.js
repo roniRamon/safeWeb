@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   urlSubmit.onclick = () => {
     let urlInput = document.getElementById('block-url-input');
     if (urlInput.value.length === 0) {
-      alert("url can't be empty")
+      alert("url can't be empty");
     } else {
       add('urls',urlInput.value);
       urlInput.value = "";
@@ -44,9 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let keywordSubmit = document.getElementById('add-word-block');
   keywordSubmit.onclick = () => {
     let keywordInput = document.getElementById('block-word-input');
-    console.log(keywordInput);
     if (keywordInput.value.length === 0) {
-      alert("keyword can't be empty")
+      alert("keyword can't be empty");
     } else {
       add('keywords', keywordInput.value);
       keywordInput.value = "";
@@ -58,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let timeStart = document.getElementById("time-start").value;
     let timeEnd = document.getElementById("time-end").value;
     if (timeStart === '' || timeEnd === '' || timeStart === 'default' || timeEnd === 'default') {
-      alert('select a valid start/end time')
+      alert('select a valid start/end time');
     } else if (timeStart && timeEnd) {
       chrome.storage.sync.set({"time": [timeStart, timeEnd]});
       alert("time saved");
@@ -96,11 +95,6 @@ chrome.storage.onChanged.addListener( (changes, namespace) => {
     let content = newValue[newValue.length - 1];
     addToUl(type[0], content);
   }
-  // else if (newValue.length < oldValue.length) {
-  //   let content = newValue.diff(oldValue);
-  //   let idx = newValue.indexOf(content);
-  //   deleteFromUl(type, idx);
-  // }
 
 });
 
@@ -122,9 +116,9 @@ function add(type, content){
       arr.push(content);
       // console.log(arr);
        chrome.storage.sync.set({[type]: arr}, console.log('test'));
-    } else {
-      console.log(`${content} already in storage`);
-    }
+    // } else {
+    //   // console.log(`${content} already in storage`);
+     }
   });
 }
 
@@ -135,9 +129,10 @@ function remove(type, content){
     if (idx !== -1){
       arr.splice(idx,1);
       chrome.storage.sync.set({[type]: arr}, deleteFromUl(type, idx));
-    } else {
-      console.log(`${content} is not in storage`);
-    }
+     }
+    // else {
+    //   console.log(`${content} is not in storage`);
+    // }
   });
 }
 
