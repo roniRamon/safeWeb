@@ -47,7 +47,7 @@ This is our final layer of protection. After checking the time duration and the 
 
 
 ## Planning for the Project
-
+The first thing we begin with this project is to build a blueprint while deciding which features to include and technologies that will be used. The proposal can be found [here]('https://github.com/tsai810417/safeWeb/blob/master/proposal.md')
 ## Technologies
 
 ## Future Directions
