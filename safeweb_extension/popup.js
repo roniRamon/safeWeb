@@ -3,12 +3,13 @@ function add(type, content){
     let arr = result[type] ? result[type]:[];
     if (!arr.includes(content)){
       arr.push(content);
-      console.log(arr);
-      console.log(`${content}`);
+      // console.log(arr);
+      // console.log(`${content}`);
       chrome.storage.sync.set({[type]: arr}, console.log('add to storage'));
-    } else {
-      console.log(`${content} already in storage`);
     }
+    // else {
+    //   console.log(`${content} already in storage`);
+    // }
   });
 }
 
@@ -36,20 +37,20 @@ document.addEventListener('DOMContentLoaded', () =>{
   let optionLink = document.getElementById('link-to-option');
   optionLink.onclick = () => {
     chrome.tabs.create({'url': "/options.html" } )
-  }
+  };
 
   let timeSpan = document.getElementById('time-span');
   chrome.storage.sync.get(['time'], res => {
     if (res['time'].length > 0) {
-      timeSpan.innerHTML = `${res['time'][0]}:00 - ${res['time'][1]}:00`
+      timeSpan.innerHTML = `${res['time'][0]}:00 - ${res['time'][1]}:00`;
     } else {
-      timeSpan.innerHTML = 'Unlimited'
+      timeSpan.innerHTML = 'Unlimited';
     }
   });
 
   let resetButton = document.getElementById('reset-time');
   resetButton.onclick = () => {
     chrome.storage.sync.set({"time": []});
-    timeSpan.innerHTML = 'Unlimited'
-  }
+    timeSpan.innerHTML = 'Unlimited';
+  };
 });
