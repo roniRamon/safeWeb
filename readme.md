@@ -24,11 +24,26 @@ Visit our [Introduction Site]("#") for more information about our extension.
 * User can easily reset the time frame in the pop-up page
 * User can open the option page by clicking button in the pop-up page
 
+#### Disable internet access when current time is not in the time frame
+This is our first layer of protection. When the user was trying to access to the internet outside of the preset time duration, all the pages will be redirected to a 404 page so the user will not be able to use the internet at all.
+
+![time limit]('#')
+
+To determine whether to disable internet access or not, first we will retrieve the preset starting time and ending time by making an API call to the Chrome Storage and then apply algorithm to check if the current time is with that time duration.
+
 #### Block URLs
+This is our second layer of protection. When user is trying to visit a site that is listed in the restricted URLs, the page will be redirected to a 404 page. This feature is to prevent kids from visiting inappropriate or non-study-related sites.
+
+![block url]('https://github.com/tsai810417/safeWeb/blob/master/images/block_url.gif?raw=true')
+
+![404 page]('https://raw.githubusercontent.com/tsai810417/safeWeb/master/images/block_web_pages.png')
+
+To determine whether the page should be redirected or not, first we retrieve the list of restricted URLs store by making an API call to the Chrome Storage and then compare the current site's URL to the list to see if there's any matches.
 
 #### Filter contents containing inappropriate keywords
+This is our final layer of protection. After checking the time duration and the site's URL, we then will have to check the 'CONTENTS' of the page. If the contents contain words that parents determine to be inappropriate for their kids, then the contents will be removed from the page. Then the kids will be able to see the informations that are safe for them.
 
-#### 
+![block words]('https://github.com/tsai810417/safeWeb/blob/master/images/block_word.gif?raw=true')
 
 
 ## Planning for the Project
