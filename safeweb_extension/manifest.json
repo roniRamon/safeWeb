@@ -1,8 +1,7 @@
 {
   "manifest_version": 2,
   "name": "SafeWeb",
-  "description": "This extension protect kids from
-  inappropriate uses of the web",
+  "description": "This extension protect kids from inappropriate uses of the web",
   "version": "1.0",
   "options_page": "options.html",
   "icons": {
