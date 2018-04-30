@@ -27,7 +27,7 @@ Visit our [Introduction Site](https://chrome.google.com/webstore/detail/safeweb/
 #### Disable internet access when current time is not in the time frame
 This is our first layer of protection. When the user was trying to access to the internet outside of the preset time duration, all the pages will be redirected to a 404 page so the user will not be able to use the internet at all.
 
-![time limit](#)
+![time limit](https://github.com/tsai810417/safeWeb/blob/master/images/time.gif?raw=true)
 
 To determine whether to disable internet access or not, first we will retrieve the preset starting time and ending time by making an API call to the Chrome Storage and then apply algorithm to check if the current time is with that time duration.
 
@@ -51,7 +51,7 @@ This is our final layer of protection. After checking the time duration and the 
 The first thing we begin with this project is to build a blueprint while deciding which features to include and technologies that will be used. The proposal can be found [here](https://github.com/tsai810417/safeWeb/blob/master/proposal.md)
 
 ## Technologies
-The Chrome Extension requires a JSON-formatted manifest file to provide important informations about our product. We build our pages in HTML, with styling in CSS. The scripts included in HTML is written in pure JavaScript. To manage the data storage, we fetch API calls to Chrome Storage. To modify
+The Chrome Extension requires a JSON-formatted manifest file to provide important informations about our product. We build our pages in HTML, with styling in CSS. The scripts included in HTML is written in pure JavaScript. To manage the data storage, we fetch API calls to Chrome Storage. In order to remove inappropriate contents from the page, we have to manipulate the DOM in content.js.
 
 ## Future Directions
 * Require password to make any changes to the setting
