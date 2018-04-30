@@ -11,7 +11,7 @@
 ## Extension Demo / Installation
 Visit our [Introduction Site](https://chrome.google.com/webstore/detail/safeweb/mmdbmgmnnjmlbhenkioliaebeaagjaie?hl=en-US&gl=US&authuser=0) for more information about our extension.
 
-[Install](#) the Google Chrome Extension
+[Install](https://chrome.google.com/webstore/detail/safeweb/mmdbmgmnnjmlbhenkioliaebeaagjaie) the Google Chrome Extension
 
 ## Key Features
 * Users can set customized URLs and keywords on the option page to prevent their kid's access to inappropriate contents
