@@ -26,11 +26,11 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
           let currentTime = new Date();
           let timeStr = "";
           if (currentTime.getHours() < 10 && currentTime.getMinutes() < 10) {
-            timeStr = `0${currentTime.getHours()}0${currentTime.getMinutes()}`
+            timeStr = `0${currentTime.getHours()}0${currentTime.getMinutes()}`;
           } else if (currentTime.getHours() < 10) {
-            timeStr =  `0${currentTime.getHours()}${currentTime.getMinutes()}`
+            timeStr =  `0${currentTime.getHours()}${currentTime.getMinutes()}`;
           } else if (currentTime.getMinutes() < 10) {
-            timeStr = `${currentTime.getHours()}0${currentTime.getMinutes()}`
+            timeStr = `${currentTime.getHours()}0${currentTime.getMinutes()}`;
           } else {
             timeStr = `${currentTime.getHours()}${currentTime.getMinutes()}`;
           }
@@ -41,7 +41,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
           }
         }
       });
-    })
+    });
   }
 });
 
