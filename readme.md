@@ -9,7 +9,7 @@
   * [Link to GitHub](https://github.com/tsai810417)
 
 ## Extension Demo / Installation
-Visit our [Introduction Site](https://chrome.google.com/webstore/detail/safeweb/mmdbmgmnnjmlbhenkioliaebeaagjaie?hl=en-US&gl=US&authuser=0) for more information about our extension.
+Visit our [Introduction Site](https://tsai810417.github.io/safeWeb/) for more information about our extension.
 
 [Install](https://chrome.google.com/webstore/detail/safeweb/mmdbmgmnnjmlbhenkioliaebeaagjaie) the Google Chrome Extension
 
