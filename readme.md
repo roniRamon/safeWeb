@@ -51,7 +51,7 @@ This is our final layer of protection. After checking the time duration and the 
 The first thing we begin with this project is to build a blueprint while deciding which features to include and technologies that will be used. The proposal can be found [here](https://github.com/tsai810417/safeWeb/blob/master/proposal.md)
 
 ## Technologies
-The Chrome Extension requires a JSON-formatted manifest file to provide important informations. We build our pages in HTML, with styling in CSS. The scripts included in HTML is written in pure JavaScript. To manage the data storage, we fetch API calls to Chrome Storage. To modify
+The Chrome Extension requires a JSON-formatted manifest file to provide important informations about our product. We build our pages in HTML, with styling in CSS. The scripts included in HTML is written in pure JavaScript. To manage the data storage, we fetch API calls to Chrome Storage. To modify
 
 ## Future Directions
 * Require password to make any changes to the setting
