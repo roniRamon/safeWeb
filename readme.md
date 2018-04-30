@@ -27,7 +27,7 @@ Visit our [Introduction Site](https://chrome.google.com/webstore/detail/safeweb/
 #### Disable internet access when current time is not in the time frame
 This is our first layer of protection. When the user was trying to access to the internet outside of the preset time duration, all the pages will be redirected to a 404 page so the user will not be able to use the internet at all.
 
-![time limit](#)
+![time limit](https://github.com/tsai810417/safeWeb/blob/master/images/time.gif?raw=true)
 
 To determine whether to disable internet access or not, first we will retrieve the preset starting time and ending time by making an API call to the Chrome Storage and then apply algorithm to check if the current time is with that time duration.
 
